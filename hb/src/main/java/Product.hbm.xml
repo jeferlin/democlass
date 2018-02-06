@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+
+
+<hibernate-mapping>
+	<class name="com.pro.hb" table="Product">
+	     <id name="prodId">  
+     		<generator class="assigned"></generator>  
+     	</id>  
+        <property name="prodName"></property>
+        <property name="price"></property>  
+        <property name = "firstName"  type = "string"/>
+	</class>
+</hibernate-mapping>
