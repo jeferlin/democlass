@@ -1,19 +1,21 @@
 package com.pro.hb;
-import org.hibernate.cfg.Configuration;
-import org.hibernate.*;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.*;
 
+import javax.persistence.Entity;
+
+import org.hibernate.*;
+@Entity
 public class Demo 
 {
 	public static void main(String arg[])
 	{
-		
 		Configuration config=new Configuration();
 		config.configure("hibernate.cfg.xml");
+		SessionFactory sessionFactory=config.buildSessionFactory();
 		
 		
-		SessionFactory sf = config.configure().buildSessionFactory();
-		
-		Session session=sf.openSession();
+		Session session=sessionFactory.openSession();
 		
 		Transaction transaction=session.beginTransaction();
 		
@@ -32,4 +34,3 @@ public class Demo
 		
 	}
 }
-
